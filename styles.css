@@ -110,7 +110,7 @@ h1, h2, h3 { font-weight: 700; line-height: 0.98; letter-spacing: -0.025em; }
 }
 
 .lead {
-  font-size: clamp(18px, 1.7vw, 23px);
+  font-size: clamp(18px, 1.7vw, 21px);
   line-height: 1.5;
   color: var(--ink-soft);
   font-weight: 400;
