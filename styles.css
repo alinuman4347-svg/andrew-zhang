@@ -607,6 +607,9 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
 @media (max-width: 940px) {
   .hero-grid { grid-template-columns: 1fr; gap: 30px; }
   .hero-photo-wrap { max-width: 300px; justify-self: start; order: -1; margin-bottom: 10px; }
+  .hero-copy { text-align: left; }
+  .hero-role { justify-content: flex-start; }
+  .hero-ctas { justify-content: flex-start; }
   .hero-badge { left: auto; right: -4%; }
   .bio-grid { grid-template-columns: 1fr; }
   .bio-card { position: relative; top: 0; max-width: 360px; margin: 0 auto; }
