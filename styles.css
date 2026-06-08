@@ -240,19 +240,19 @@ h1, h2, h3 { font-weight: 700; line-height: 0.98; letter-spacing: -0.025em; }
   align-items: center;
 }
 .hero-copy { position: relative; z-index: 3; }
-.hero-eyebrow { margin-bottom: clamp(18px, 3vh, 34px); }
-.hero-name { margin-bottom: 26px; }
-.hero-name .nm { color: var(--ink); }
-.hero-role {
-  display: flex; flex-wrap: wrap; gap: 10px 18px;
-  font-family: var(--mono);
-  font-size: clamp(11px, 1vw, 13px);
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 28px;
+.hero-eyebrow { margin-bottom: clamp(16px, 2.5vh, 28px); }
+.hero-headline {
+  font-size: clamp(42px, 6.8vw, 108px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.97;
+  color: var(--ink);
+  text-wrap: balance;
+  margin-bottom: clamp(22px, 3.5vh, 38px);
 }
-.hero-role span { display: inline-flex; align-items: center; gap: 10px; }
-.hero-role span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.hero-desc {
+  margin-bottom: 0;
+}
 
 .hero-photo-wrap {
   position: relative;
@@ -305,17 +305,35 @@ h1, h2, h3 { font-weight: 700; line-height: 0.98; letter-spacing: -0.025em; }
 .hero-badge .bnum { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
 .hero-badge .blabel { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
 
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: clamp(28px, 4vh, 42px); }
 .hero-btn {
-  display: inline-flex; align-items: center;
-  padding: 14px 28px; border-radius: 100px;
-  font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 15px 32px; border-radius: 100px;
+  font-size: clamp(14px, 1.1vw, 16px); font-weight: 600; letter-spacing: -0.01em;
   transition: all 0.35s var(--ease);
+  white-space: nowrap;
 }
-.hero-btn.primary { background: var(--accent); color: #fff; }
-.hero-btn.primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--accent) 50%, transparent); }
-.hero-btn.secondary { border: 1.5px solid var(--ink); color: var(--ink); }
-.hero-btn.secondary:hover { background: var(--ink); color: var(--bg); transform: translateY(-2px); }
+.hero-btn.primary {
+  background: var(--accent); color: #fff;
+  box-shadow: 0 4px 20px -6px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.hero-btn.primary:hover {
+  background: var(--accent-2);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px -8px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.hero-btn.secondary {
+  border: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  color: var(--ink);
+  background: transparent;
+}
+.hero-btn.secondary:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px -10px color-mix(in srgb, var(--ink) 30%, transparent);
+}
 
 .scroll-hint {
   position: absolute; left: clamp(20px, 5vw, 64px); bottom: 26px;
@@ -608,7 +626,6 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
   .hero-grid { grid-template-columns: 1fr; gap: 30px; }
   .hero-photo-wrap { max-width: 300px; justify-self: start; order: -1; margin-bottom: 10px; }
   .hero-copy { text-align: left; }
-  .hero-role { justify-content: flex-start; }
   .hero-ctas { justify-content: flex-start; }
   .hero-badge { left: auto; right: -4%; }
   .bio-grid { grid-template-columns: 1fr; }
@@ -621,7 +638,7 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
 @media (max-width: 600px) {
   .svc-grid { grid-template-columns: 1fr; }
   .focus-row { grid-template-columns: auto 1fr; }
-  .hero-role { font-size: 11px; }
+  .hero-headline { line-height: 1.02; letter-spacing: -0.03em; }
   .foot-row { flex-direction: column; align-items: flex-start; }
   .foot-btns { flex-direction: column; align-items: center; }
   .foot-btn { justify-content: center; width: 100%; max-width: 320px; }
