@@ -742,10 +742,19 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
   .svc-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
+  /* ---- hero mobile: center everything ---- */
+  .hero { padding-top: clamp(100px, 16vh, 130px); padding-bottom: clamp(60px, 10vh, 90px); }
+  .hero-photo-wrap { justify-self: center; max-width: 220px; margin-bottom: 4px; }
+  .hero-copy { text-align: center; }
+  .hero-eyebrow { display: flex; justify-content: center; }
+  .hero-headline { max-width: 100%; line-height: 1.08; letter-spacing: -0.025em; }
+  .hero-ctas { justify-content: center; flex-direction: column; align-items: center; gap: 12px; }
+  .hero-btn { width: 100%; max-width: 300px; justify-content: center; }
+
+  /* ---- rest ---- */
   .svc-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
   .focus-row { grid-template-columns: auto 1fr; }
-  .hero-headline { max-width: 100%; line-height: 1.1; letter-spacing: -0.025em; }
   .foot-row { flex-direction: column; align-items: flex-start; }
   .foot-ctas { flex-direction: column; align-items: center; width: 100%; }
   .foot-cta-btn { justify-content: center; width: 100%; max-width: 320px; }
