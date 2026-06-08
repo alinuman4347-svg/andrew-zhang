@@ -64,20 +64,29 @@
 /* ============================================================
    CUSTOM SCROLLBAR — visible on both light and dark sections
    ============================================================ */
-:root {
+html {
   scrollbar-width: thin;
-  scrollbar-color: #6B84FF rgba(255,255,255,0.06);
+  scrollbar-color: #6B84FF rgba(255,255,255,0.08);
 }
-::-webkit-scrollbar { width: 6px; }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
 ::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.06);
-  border-radius: 100px;
+  background: rgba(255,255,255,0.08);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #6B84FF;
-  border-radius: 100px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
-::-webkit-scrollbar-thumb:hover { background: #8fa4ff; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8FA4FF;
+}
 
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
