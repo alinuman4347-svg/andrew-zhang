@@ -66,16 +66,18 @@
    ============================================================ */
 :root {
   scrollbar-width: thin;
-  scrollbar-color: #2F4BFF transparent;
+  scrollbar-color: #6B84FF rgba(255,255,255,0.06);
 }
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: #2F4BFF;
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.06);
   border-radius: 100px;
-  transition: background 0.25s ease;
 }
-::-webkit-scrollbar-thumb:hover { background: #5570ff; }
+::-webkit-scrollbar-thumb {
+  background: #6B84FF;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover { background: #8fa4ff; }
 
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
