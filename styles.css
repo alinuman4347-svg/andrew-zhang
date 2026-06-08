@@ -242,13 +242,14 @@ h1, h2, h3 { font-weight: 700; line-height: 0.98; letter-spacing: -0.025em; }
 .hero-copy { position: relative; z-index: 3; }
 .hero-eyebrow { margin-bottom: clamp(16px, 2.5vh, 28px); }
 .hero-headline {
-  font-size: clamp(42px, 6.8vw, 108px);
+  font-size: clamp(28px, 4.2vw, 68px);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.97;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
   color: var(--ink);
   text-wrap: balance;
-  margin-bottom: clamp(22px, 3.5vh, 38px);
+  max-width: 14ch;
+  margin-bottom: clamp(18px, 3vh, 32px);
 }
 .hero-desc {
   margin-bottom: 0;
@@ -638,7 +639,7 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
 @media (max-width: 600px) {
   .svc-grid { grid-template-columns: 1fr; }
   .focus-row { grid-template-columns: auto 1fr; }
-  .hero-headline { line-height: 1.02; letter-spacing: -0.03em; }
+  .hero-headline { max-width: 100%; line-height: 1.1; letter-spacing: -0.025em; }
   .foot-row { flex-direction: column; align-items: flex-start; }
   .foot-btns { flex-direction: column; align-items: center; }
   .foot-btn { justify-content: center; width: 100%; max-width: 320px; }
