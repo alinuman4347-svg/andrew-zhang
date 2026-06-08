@@ -584,14 +584,66 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
    ============================================================ */
 .foot {
   background: var(--dark-bg); color: var(--dark-ink);
-  padding: clamp(50px, 7vh, 80px) 0 50px;
+  padding: clamp(70px, 11vh, 130px) 0 50px;
   position: relative; overflow: hidden;
 }
 .foot .wrap { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.foot .kicker { color: var(--accent); } .foot .kicker::before { background: var(--accent); }
-.foot-big { font-size: clamp(32px, 6vw, 90px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin: 26px 0 24px; text-wrap: balance; }
-.foot-sub { font-size: clamp(16px, 1.5vw, 20px); color: color-mix(in srgb, var(--dark-ink) 70%, transparent); max-width: 52ch; line-height: 1.55; margin-bottom: 40px; text-wrap: pretty; }
+.foot .kicker { color: var(--accent); margin-bottom: 20px; }
+.foot-big {
+  font-size: clamp(32px, 5.5vw, 80px);
+  font-weight: 800; letter-spacing: -0.04em; line-height: 1.02;
+  margin: 0 0 22px; text-wrap: balance;
+}
 .foot-big em { font-style: normal; color: var(--accent); }
+.foot-sub {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: color-mix(in srgb, var(--dark-ink) 65%, transparent);
+  max-width: 50ch; line-height: 1.6; margin-bottom: 0; text-wrap: pretty;
+}
+
+/* primary + secondary CTA buttons */
+.foot-ctas {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 14px;
+  margin-top: 40px;
+}
+.foot-cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px; border-radius: 100px;
+  font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
+  text-decoration: none; white-space: nowrap;
+  transition: all 0.35s var(--ease);
+}
+.foot-cta-btn.primary {
+  background: var(--accent); color: #fff; border: 1.5px solid var(--accent);
+  box-shadow: 0 4px 22px -6px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.foot-cta-btn.primary:hover {
+  background: var(--accent-2); border-color: var(--accent-2);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -8px color-mix(in srgb, var(--accent) 65%, transparent);
+}
+.foot-cta-btn.secondary {
+  background: transparent; color: var(--dark-ink);
+  border: 1.5px solid color-mix(in srgb, var(--dark-ink) 35%, transparent);
+}
+.foot-cta-btn.secondary:hover {
+  background: var(--dark-ink); color: var(--dark-bg);
+  border-color: var(--dark-ink);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -10px color-mix(in srgb, var(--dark-ink) 20%, transparent);
+}
+
+/* divider between main CTAs and contact strip */
+.foot-divider {
+  display: flex; align-items: center; gap: 18px;
+  width: 100%; max-width: 380px; margin-top: 42px;
+  color: color-mix(in srgb, var(--dark-ink) 35%, transparent);
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+}
+.foot-divider::before, .foot-divider::after {
+  content: ""; flex: 1; height: 1px;
+  background: color-mix(in srgb, var(--dark-ink) 15%, transparent);
+}
 .foot-row { display: flex; flex-wrap: wrap; gap: 30px 60px; align-items: flex-end; justify-content: space-between; border-top: 1px solid var(--dark-line-c); padding-top: 36px; }
 .foot-contacts { display: flex; flex-wrap: wrap; gap: 14px; }
 .foot-link {
@@ -672,6 +724,8 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
   .focus-row { grid-template-columns: auto 1fr; }
   .hero-headline { max-width: 100%; line-height: 1.1; letter-spacing: -0.025em; }
   .foot-row { flex-direction: column; align-items: flex-start; }
+  .foot-ctas { flex-direction: column; align-items: center; width: 100%; }
+  .foot-cta-btn { justify-content: center; width: 100%; max-width: 320px; }
   .foot-btns { flex-direction: column; align-items: center; }
   .foot-btn { justify-content: center; width: 100%; max-width: 320px; }
   .foot-bottom { flex-direction: column; align-items: center; gap: 8px; text-align: center; }
