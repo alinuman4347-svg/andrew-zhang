@@ -557,7 +557,7 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
 .svc p { color: var(--ink-soft); font-size: clamp(13px, 1.1vw, 15px); line-height: 1.6; text-wrap: pretty; }
 
 /* ============================================================
-   WHY + CERTS
+   WHY
    ============================================================ */
 .why-tagline {
   font-size: clamp(18px, 2vw, 26px);
@@ -568,27 +568,34 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
   margin-top: 14px;
   text-wrap: balance;
 }
-
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
-.why-col .kicker { display: block; margin-bottom: 22px; }
-.why-col .certs { margin-top: 0; }
 .why-list { display: flex; flex-direction: column; }
 .why-item { display: flex; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
 .why-item:first-child { border-top: 1px solid var(--line); }
 .why-item .wk { font-family: var(--mono); font-size: 12px; color: var(--accent); min-width: 34px; }
 .why-item .wt { font-size: clamp(17px, 1.6vw, 21px); font-weight: 600; letter-spacing: -0.01em; }
 
-.certs { display: flex; flex-direction: column; gap: 16px; }
+/* ============================================================
+   CERTIFICATIONS
+   ============================================================ */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
 .cert {
   display: flex; align-items: center; gap: 18px;
   background: var(--surface); border: 1px solid var(--line);
-  border-radius: 14px; padding: 22px 24px;
-  min-height: 80px;
-  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
+  border-radius: 14px; padding: 24px 28px;
+  min-height: 88px;
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
-.cert:hover { transform: translateX(6px); border-color: var(--accent); }
+.cert:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px -12px color-mix(in srgb, var(--accent) 25%, transparent);
+}
 .cert .cmark {
-  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+  width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
   background: color-mix(in srgb, var(--accent) 12%, transparent);
   display: grid; place-items: center;
   color: var(--accent); font-family: var(--mono); font-size: 13px; font-weight: 600;
@@ -732,11 +739,11 @@ section.block { padding: clamp(80px, 13vh, 170px) 0; position: relative; }
   .bio-card { position: relative; top: 0; max-width: 360px; margin: 0 auto; }
   .bio-card .meta { text-align: center; }
   .bio-card .meta .row { justify-content: center; gap: 16px; }
-  .why-grid { grid-template-columns: 1fr; gap: 40px; }
   .svc-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
   .svc-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
   .focus-row { grid-template-columns: auto 1fr; }
   .hero-headline { max-width: 100%; line-height: 1.1; letter-spacing: -0.025em; }
   .foot-row { flex-direction: column; align-items: flex-start; }
